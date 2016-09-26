@@ -13,7 +13,7 @@ commit_to_apply_sha=`git rev-parse --short=5 --verify HEAD`
 git checkout $actual_branch
 
 # apply commit
-git cherry-pick $commit_to_apply
+git cherry-pick $commit_to_apply_sha
 
 # delete stashed branch
 git branch -D $1
