@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # get message for branch name
-branch_name=$1
+branch_name=$1 | sed -e "s/\s/\_/g"
 
 # save actual branch
 actual_branch=`git rev-parse --abbrev-ref HEAD`
