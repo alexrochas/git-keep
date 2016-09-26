@@ -8,6 +8,7 @@ git checkout $1
 
 # get HEAD commit
 commit_to_apply_sha=`git rev-parse --short=5 --verify HEAD`
+echo "Get commit with sha ${commit_to_apply_sha}"
 
 # back to original branch
 git checkout $actual_branch
