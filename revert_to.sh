@@ -17,7 +17,7 @@ git cherry-pick $commit_to_apply_sha
 
 # revert to unstaged files
 git reset --soft HEAD~1
-git checkout HEAD .
+git reset HEAD .
 
 # delete stashed branch
 git branch -D $1
