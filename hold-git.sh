@@ -30,8 +30,10 @@ current_sha=`git rev-parse --short=5 --verify HEAD`
 
 # create new branch and move changes
 if [ -z "${message}" ]; then
+    echo "branch name without message"
 	branch_name=$current_sha
 else
+    echo "branch name with given message"
 	branch_name="${current_sha}_${message}"
 fi
 git checkout -b ${branch_name}
