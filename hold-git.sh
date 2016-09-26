@@ -44,6 +44,6 @@ git checkout ${actual_branch}
 # revert last commit
 git reset --hard HEAD~1
 
-echo "Holding ${current_sha}_${branch_name}"
+echo "Holding ${branch_name}"
 
 
