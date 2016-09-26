@@ -36,6 +36,8 @@ else
     echo "branch name with given message"
 	branch_name="${current_sha}_${message}"
 fi
+
+echo "creating branch with name ${branch_name}"
 git checkout -b ${branch_name}
 
 # back to last branch
