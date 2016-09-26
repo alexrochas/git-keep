@@ -1,5 +1,16 @@
 #!/bin/bash
 
+if [ $(dpkg-query -W -f='${Status}' git 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+	echo "Git not found! Install? (y/n) \c"
+	read
+	if "$REPLY" = "y"; then
+		sudo apt-get install git
+	fi
+else
+	echo "Updating README.md"
+fi
+
 # get message for branch name
 branch_name=$1 | sed -e "s/\s/\_/g"
 
