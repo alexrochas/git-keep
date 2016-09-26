@@ -35,7 +35,6 @@ else
 	branch_name="${current_sha}_${message}"
 fi
 `git checkout -b ${branch_name}`
-`git cherry-pick ${current_sha}`
 
 # back to last branch
 `git checkout ${actual_branch}`
