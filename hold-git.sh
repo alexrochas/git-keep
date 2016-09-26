@@ -14,7 +14,7 @@ fi
 # get message for branch name
 case $1 in
     -m | --message )    shift
-						message=$1 | sed -e "s/\s/\_/g"
+                        message=$(echo $1 | sed -e "s/\s/\_/g")
                         ;;
 esac
 
