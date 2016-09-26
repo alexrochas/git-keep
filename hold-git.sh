@@ -19,7 +19,7 @@ case $1 in
 esac
 
 # save actual branch
-actual_branch=git rev-parse --abbrev-ref HEAD
+actual_branch=`git rev-parse --abbrev-ref HEAD`
 
 # add all unstaged things
 git add .
