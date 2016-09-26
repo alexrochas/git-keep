@@ -12,7 +12,11 @@ else
 fi
 
 # get message for branch name
-branch_name=$1 | sed -e "s/\s/\_/g"
+case $1 in
+    -m | --message )    shift
+						message=$1 | sed -e "s/\s/\_/g"
+                        ;;
+esac
 
 # save actual branch
 actual_branch=`git rev-parse --abbrev-ref HEAD`
@@ -25,7 +29,12 @@ actual_branch=`git rev-parse --abbrev-ref HEAD`
 current_sha=`git rev-parse --short=5 --verify HEAD`
 
 # create new branch and move changes
-`git checkout -b ${current_sha}_${branch_name}`
+if [ -z "${message}" ]; then
+	branch_name=$current_sha
+else
+	branch_name="${current_sha}_${message}"
+fi
+`git checkout -b $branch_name`
 `git cherry-pick ${current_sha}`
 
 # back to last branch
