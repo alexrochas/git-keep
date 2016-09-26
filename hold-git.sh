@@ -15,7 +15,7 @@ current_sha=`git rev-parse --short=5 --verify HEAD`
 
 # create new branch and move changes
 `git checkout -b ${current_sha}_${branch_name}`
-`git cherry-pick ${current_sha}_${branch_name}`
+`git cherry-pick ${current_sha}`
 
 # back to last branch
 `git checkout $actual_branch`
