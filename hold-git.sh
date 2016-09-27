@@ -7,8 +7,6 @@ then
 	if "$REPLY" = "y"; then
 		sudo apt-get install git
 	fi
-else
-	echo "Updating README.md"
 fi
 
 # get message for branch name
